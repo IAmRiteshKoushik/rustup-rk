@@ -31,7 +31,28 @@ fn basic_loop(){
 }
 
 fn loop_label() {
-    
+    let mut count = 0;
+    // Loop label (useful when you have multiple loops)
+    // If you need to break the outer loop and not the inner loop that
+    // gets broken by default when you call break or continue then 
+    // these loop labels came in handy
+    'counting_up: loop {
+        println!("Count = {count}");
+        let mut remaining = 10;
+
+        loop {
+            println!("Remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        };
+        count += 1;
+    };
+    println!("End count = {count}");
 }
 
 fn while_loop() {
