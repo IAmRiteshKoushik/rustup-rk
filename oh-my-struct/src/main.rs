@@ -16,9 +16,9 @@ struct AlwaysEqual;
 
 
 fn main() {
-    let subject = AlwaysEqual;
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
+    let _subject = AlwaysEqual;
+    let _black = Color(0, 0, 0);
+    let _origin = Point(0, 0, 0);
 
     // --snip--
     let user1 = User {
