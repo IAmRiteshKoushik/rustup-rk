@@ -367,3 +367,78 @@
 //     let integer_point = Point { x: 5, y: 10 };
 //     let float_point = Point { x: 1.0, y: 10.0 };
 // }
+
+// use std::fs;
+
+// fn main() {
+// there is a fn that can error out/stop the thread
+// let res = fs::read_to_string("example.txt");
+// match res {
+//     Ok(content) => {
+//         println!("File content: {}", content);
+//     }
+//     Err(error) => {
+//         println!("Error: {}", error);
+//     }
+// }
+
+//     let res = read_from_file_unsafe("example.txt".to_string());
+//     println!("Hi There");
+// }
+
+// fn read_from_file_unsafe(file_content: String) -> Result<String, String> {
+//     let res = fs::read_to_string("example.txt");
+//     match res {
+//         Ok(content) => Ok(content),
+//         Err(_) => Err("Error reading file".to_string()),
+//     }
+//
+//     // - Complicated way to do things in Rust, better to use match()
+//     // if let Ok(content) = res {
+//     //     return Ok(content);
+//     // } else {
+//     //     return Err("Error reading file".to_string());
+//     // }
+//
+//     // unwrap() means either receiv the proper result or crash the thread
+// }
+
+// -- OPTIONA ENUM
+// fn find_first_a(s: String) -> Option<i32> {
+//     for (index, character) in s.chars().enumerate() {
+//         if character == 'a' {
+//             // Return is not index (because index type is usize)
+//             // Return is Some() because it is an Option which is supposed to
+//             // return an ENUM of the Some() type or the None type
+//             return Some(index as i32);
+//         }
+//     }
+//     return None;
+// }
+//
+// // Result, Option enums are used very frequently - Error handling, nullability
+//
+// fn main() {
+//     let my_string = String::from("rmn");
+//     let res = find_first_a(my_string);
+//     match res {
+//         Some(index) => println!("The letter 'a' is found at index: {}", index),
+//         None => println!("The letter 'a' is not found in the string"),
+//     }
+// }
+
+use chrono::{Local, Utc};
+
+fn main() {
+    // Get the current date and time in UTC
+    let now = Utc::now();
+    println!("Current date and time in UTC: {}", now);
+
+    // Format the date and time
+    let formatted = now.format("%Y-%m-%d %H:%M:%S");
+    println!("Formatted date and time: {}", formatted);
+
+    // Get local time
+    let local = Local::now();
+    println!("Current date and time in local: {}", local);
+}
