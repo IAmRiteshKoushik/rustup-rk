@@ -262,3 +262,97 @@
 // fn update_word2(word: &mut String) {
 //     word.push_str(" World2")
 // }
+
+// Structs - Checkout tuple struct, unit struct
+// struct User {
+//     active: bool,
+//     username: String,
+//     email: String,
+//     sign_in_count: u64,
+// }
+//
+// fn main() {
+//     let user1 = User {
+//         active: true,
+//         username: String::from("someusername123"),
+//         email: String::from("someone@example.com"),
+//         sign_in_count: 1,
+//     };
+//     println!("User 1 username: {:?}", user1.username);
+// }
+
+// struct Rect {
+//     width: u32,
+//     height: u32,
+// }
+//
+// impl Rect {
+//     // Usually the last line is when we return things from a function which has
+//     // a return type specified. You can choose to leave our the return keywrod
+//     // and not add a semicolon either to let the rust compiler know that it
+//     // is the return statement that the function was expecting
+//     fn area(&self) -> u32 {
+//         self.width * self.height
+//         // return self.width * self.height;
+//     }
+// }
+//
+// fn main() {
+//     let rect: Rect = Rect {
+//         width: 30,
+//         height: 50,
+//     };
+// }
+
+// -- ENUMS
+// enum Direction {
+//     North,
+//     East,
+//     South,
+//     West,
+// }
+//
+// fn main() {
+//     let my_direction = Direction::North;
+//     let new_direction = my_direction; // No error, because Directionis Copy
+//     move_around(new_direction);
+// }
+// fn move_around(direction: Direction) {
+//     // implement logic for the arg to mvoe around
+// }
+
+// -- ENUMS (with data associated with it) + PATTERN MATCHING
+// enum Shape {
+//     // The data associated with a ENUM is called as a variant
+//     Circle(f64),         // Variants
+//     Square(f64),         // Variants
+//     Rectangle(f64, f64), // Variants
+// }
+// fn calculate_area(shape: Shape) -> f64 {
+//     // You can also do pattern matching using if-statements but the match
+//     // keyword is the default way to handle it
+//     match shape {
+//         Shape::Circle(radius) => {
+//             return std::f64::consts::PI * radius * radius;
+//         }
+//         Shape::Square(side_length) => {
+//             return side_length * side_length;
+//         }
+//         Shape::Rectangle(width, height) => {
+//             return width * height;
+//         }
+//     };
+// }
+//
+// fn main() {
+//     let circle = Shape::Circle(5.0);
+//     let square = Shape::Square(5.0);
+//     let rectangle = Shape::Rectangle(3.0, 6.0);
+//
+//     let mut area = calculate_area(circle);
+//     println!("Area of circle: {}\n", area);
+//     area = calculate_area(square);
+//     println!("Area of circle: {}\n", area);
+//     area = calculate_area(rectangle);
+//     println!("Area of circle: {}\n", area);
+// }
