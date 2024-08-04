@@ -356,3 +356,14 @@
 //     area = calculate_area(rectangle);
 //     println!("Area of circle: {}\n", area);
 // }
+
+// -- Generics
+// struct Point<T> {
+//     x: T,
+//     y: T,
+// }
+//
+// fn main() {
+//     let integer_point = Point { x: 5, y: 10 };
+//     let float_point = Point { x: 1.0, y: 10.0 };
+// }
